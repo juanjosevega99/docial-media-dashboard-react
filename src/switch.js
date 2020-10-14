@@ -23,3 +23,5 @@ function Switch({ setDarkMode, checked, setChecked }) {
     </div>
   );
 }
+
+export default Switch;
