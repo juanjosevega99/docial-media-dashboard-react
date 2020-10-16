@@ -25,7 +25,19 @@ function App() {
     };
   }, []);
 
-  return <main className={mainClass}></main>;
+  return (
+    <main className={mainClass}>
+      <Header>
+        <Switch
+          setDarkMode={setDarkMode}
+          checked={checked}
+          setChecked={setChecked}
+        />
+      </Header>
+      <TopCardList />
+      <Overview />
+    </main>
+  );
 }
 
 export default App;
