@@ -17,7 +17,13 @@ function App() {
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
-  });
+    mq.addEventListener(changeMedia);
+    setDarkMode(mq.matches);
+    setChecked(mq.matches);
+    return () => {
+      mq.removeEventListener(changeMedia);
+    };
+  }, []);
 
   return <main className={mainClass}></main>;
 }
